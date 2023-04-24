@@ -8,6 +8,9 @@ class BookResource extends JsonResource
 {
     public function toArray($request): array
     {
-        return $this->resource->only('id', 'name', 'copies_sold', 'created_at', 'published_at');
+        return [
+            ...$this->resource->only('id', 'name', 'copies_sold', 'created_at', 'published_at'),
+            'authors' => AuthorResource::collection($this->authors),
+        ];
     }
 }

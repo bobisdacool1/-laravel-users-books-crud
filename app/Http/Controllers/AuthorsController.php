@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BaseAuthorRequest;
+use App\Http\Resources\AuthorResource;
 use App\Models\Author;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -26,6 +27,11 @@ class AuthorsController extends Controller
     public function edit(Author $author): View
     {
         return view('authors.edit', ['author' => $author]);
+    }
+
+    public function show(Author $author): AuthorResource
+    {
+        return new AuthorResource($author);
     }
 
     public function store(BaseAuthorRequest $request): RedirectResponse

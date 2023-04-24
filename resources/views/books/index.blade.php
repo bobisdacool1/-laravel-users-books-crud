@@ -48,6 +48,7 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-link px-1 py-0 align-baseline">Delete</button>
                     </form>
+                    <a href="{{route('books.show', $book)}}" class="px-1 text-nowrap">View API data</a>
                 </td>
             </tr>
         @endforeach

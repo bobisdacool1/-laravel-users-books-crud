@@ -8,12 +8,19 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
-<main class="py-5">
-    <div class="container py-5">
-        <h1>@yield('page_name')</h1>
-        <hr class="mb-4 pb-4">
 
-        @yield('content')
+<main class="py-5">
+    <div class="container">
+        <a href="/" class="d-inline align-items-center link-body-emphasis text-light bg-dark p-4 bd rounded">
+            <span class="fs-4">Home</span>
+        </a>
+
+        <div class="py-5">
+            <h1>@yield('page_name')</h1>
+            <hr class="mb-4 pb-4">
+
+            @yield('content')
+        </div>
     </div>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

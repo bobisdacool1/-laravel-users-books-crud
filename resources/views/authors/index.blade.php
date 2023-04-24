@@ -38,6 +38,7 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-link px-1 py-0 align-baseline">Delete</button>
                     </form>
+                    <a href="{{route('authors.show', $author)}}" class="px-1">View API data</a>
                 </td>
             </tr>
         @endforeach

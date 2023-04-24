@@ -11,12 +11,6 @@ class Book extends Model
 {
     use HasFactory;
 
-    protected $casts = [
-        'published_at' => 'datetime',
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
-    ];
-
     protected $fillable = [
         'name',
         'copies_sold',

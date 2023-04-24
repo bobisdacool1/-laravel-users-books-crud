@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BookBaseRequest;
 use App\Http\Requests\BooksIndexRequest;
+use App\Http\Resources\BookResource;
 use App\Models\Book;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -31,6 +32,11 @@ class BooksController extends Controller
     public function edit(Book $book): View
     {
         return view('books.edit', ['book' => $book]);
+    }
+
+    public function show(Book $book): BookResource
+    {
+        return new BookResource($book);
     }
 
     public function store(BookBaseRequest $request): RedirectResponse

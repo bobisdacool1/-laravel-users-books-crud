@@ -19,5 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('authors', AuthorsController::class)->except(['show']);
-Route::resource('books', BooksController::class)->except(['show']);
+Route::resource('authors', AuthorsController::class);
+Route::resource('books', BooksController::class);

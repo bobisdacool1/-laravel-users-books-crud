@@ -11,7 +11,7 @@ class Author extends Model
     use HasFactory;
 
     protected $casts = [
-        'has_rocket_launcher' => true,
+        'has_rocket_launcher' => 'bool',
     ];
 
     protected $fillable = [

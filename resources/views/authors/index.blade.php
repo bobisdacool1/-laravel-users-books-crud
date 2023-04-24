@@ -12,6 +12,7 @@
             <th scope="col">Id</th>
             <th scope="col">Name</th>
             <th scope="col">Has grenade launcher</th>
+            <th scope="col">Books count</th>
             <th scope="col">Created at</th>
             <th scope="col">Actions</th>
         </tr>
@@ -28,6 +29,7 @@
                         No :(
                     @endif
                 </td>
+                <td>{{$author->books_count}}</td>
                 <td>{{$author->created_at->format('Y-m-d')}}</td>
                 <td>
                     <a href="{{route('authors.edit', $author)}}" class="px-1">Edit</a>

@@ -1,8 +1,10 @@
-1. Реализовать сущности авторы (users) и книги (books)
-2. Реализовать CRUD операции для авторов и книг
-3. Реализовать фильтрацию книг по авторам
-4. При получении автора так-же возвращать кол-во его книг
-5. Реализовать выдачу данных в формате json по RESTful-API протоколу
-6. Входные данные должны быть проверены на валидность
-7. Реализовать интерфейс для работы с API
-8. Реализовать Seeder с тестовыми данными
+# Tasks
+
+1. Add author and books entities
+2. Implement CRUD operations for books and authors
+3. Add book's filtration by authors
+4. Add books quantity in authors list
+5. Add ability to get json RESTful data
+6. Validate incoming data
+7. Add some UI for backend
+8. Add Seeders for DB

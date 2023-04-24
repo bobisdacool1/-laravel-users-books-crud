@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BaseBookRequest extends FormRequest
+class BookBaseRequest extends FormRequest
 {
     public function rules(): array
     {

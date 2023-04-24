@@ -3,7 +3,22 @@
     Books
 @endsection
 @section('content')
-    <a type="button" class="btn btn-primary mb-3" href="{{route('books.create')}}">Create one</a>
+    <div class="row">
+        <div class="col-6">
+            <a type="button" class="btn btn-primary mb-3" href="{{route('books.create')}}">Create one</a>
+        </div>
+        <div class="col-6">
+            <form>
+                <div class="mb-3 d-flex justify-content-end">
+                    <input type="text" name="author" class="form-control col-4 w-50"
+                           placeholder="Look for some author..."
+                           value="{{Request::input('author') ?? ''}}"/>
+                    <button type="submit" class="btn btn-primary mx-3">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
 
     <table class="table">
         <thead>
@@ -11,6 +26,7 @@
             <th scope="col">Id</th>
             <th scope="col">Name</th>
             <th scope="col">Copies sold</th>
+            <th scope="col">Author</th>
             <th scope="col">Published at</th>
             <th scope="col">Created at</th>
             <th scope="col">Actions</th>
@@ -22,6 +38,7 @@
                 <th scope="row">{{$loop->iteration}}</th>
                 <td>{{$book->name}}</td>
                 <td>{{$book->copies_sold}}</td>
+                <td>{{$book->authors->implode('name', ', ')}}</td>
                 <td>{{$book->published_at?->format('Y-m-d')}}</td>
                 <td>{{$book->created_at->format('Y-m-d')}}</td>
                 <td>

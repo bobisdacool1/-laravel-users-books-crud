@@ -14,7 +14,7 @@ class BookFactory extends Factory
         return [
             'name' => $this->faker->words(3, true),
             'copies_sold' => $this->faker->randomNumber(),
-            'published_at' => $this->faker->dateTime,
+            'published_at' => $this->faker->dateTime(),
         ];
     }
 }

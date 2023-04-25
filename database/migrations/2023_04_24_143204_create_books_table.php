@@ -13,7 +13,7 @@ class CreateBooksTable extends Migration
 
             $table->string('name');
             $table->unsignedBigInteger('copies_sold')->default(0);
-            $table->date('published_at')->nullable();
+            $table->dateTime('published_at')->nullable();
 
             $table->timestamps();
         });

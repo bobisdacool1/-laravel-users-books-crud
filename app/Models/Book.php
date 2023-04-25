@@ -17,6 +17,10 @@ class Book extends Model
         'published_at',
     ];
 
+    protected $casts = [
+        'published_at' => 'datetime',
+    ];
+
     public function authors(): BelongsToMany
     {
         return $this->belongsToMany(Author::class, 'books_authors', 'book_id', 'author_id');
@@ -24,7 +28,7 @@ class Book extends Model
 
     public function scopeByAuthor(Builder $query, string $search): Builder
     {
-        return $query->whereRelation('authors', function(Builder $builder) use ($search) {
+        return $query->whereRelation('authors', function (Builder $builder) use ($search) {
             $builder->where('name', 'LIKE', "%$search%")
                 ->orWhere('id', '=', $search);
         });
